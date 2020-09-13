@@ -1,7 +1,7 @@
 package adaptador;
 
 import pedido.Endereco;
-import pedido.Pedido;
+import pedido.ItemCompra;
 import transporte.Carga;
 
 /*
@@ -12,12 +12,10 @@ import transporte.Carga;
  */
 public class AdaptadorCarga extends Carga{
 	
-	private Pedido pedido;
-	private int index;
+	private ItemCompra itemCompra;
 	
-	public AdaptadorCarga(Pedido pedido, int index) {
-		this.pedido = pedido;
-		this.index = index;
+	public AdaptadorCarga(ItemCompra itemCompra) {
+		this.itemCompra = itemCompra;
 	}
 
 	/*
@@ -27,68 +25,68 @@ public class AdaptadorCarga extends Carga{
 	 * depende do que foi escolhido em TODO.ADAPTER.03.2.
 	 */
 
-	public String getIdentificadorRastreio() {
-		return pedido.getItensCompra().get(index).getProduto().getNome(); 
+	public String getIdentificadorRastreio() { 
+		return itemCompra.getProduto().getNome();
 	}
 
 	public void setIdentificadorRastreio(String identificadorRastreio) {
-		pedido.getItensCompra().get(index).getProduto().setNome(identificadorRastreio);
+		itemCompra.getProduto().setNome(identificadorRastreio);
 	}
 
 	public float getValorReais() {
-		return pedido.getItensCompra().get(index).getValorReais();
+		return itemCompra.getValorReais();
 	}
 
 	public void setValorReais(float valorReais) {
-		pedido.getItensCompra().get(index).getValorReais();
+		itemCompra.setValorReais(valorReais);
 	}
 
 	public float getPesoKg() {
-		return pedido.getItensCompra().get(index).getProduto().getPesoEmKg();
+		return itemCompra.getProduto().getPesoEmKg();
 	}
 
 	public void setPesoKg(float pesoKg) {
-		pedido.getItensCompra().get(index).getProduto().setPesoEmKg(pesoKg);
+		itemCompra.getProduto().setPesoEmKg(pesoKg);
 	}
 
 	public float getAltura() {
-		return pedido.getItensCompra().get(index).getProduto().getDimensoesCm()[0];
+		return itemCompra.getProduto().getDimensoesCm()[0];
 	}
 
 	public void setAltura(float altura) {
-		pedido.getItensCompra().get(index).getProduto().getDimensoesCm()[0] = altura;
+		itemCompra.getProduto().getDimensoesCm()[0] = altura;
 	}
 
 	public float getLargura() {
-		return pedido.getItensCompra().get(index).getProduto().getDimensoesCm()[1];
+		return itemCompra.getProduto().getDimensoesCm()[1];
 	}
 
 	public void setLargura(float largura) {
-		pedido.getItensCompra().get(index).getProduto().getDimensoesCm()[1] = largura;
+		itemCompra.getProduto().getDimensoesCm()[1] = largura;
 	}
 
 	public float getProfundidade() {
-		return pedido.getItensCompra().get(index).getProduto().getDimensoesCm()[2];
+		return itemCompra.getProduto().getDimensoesCm()[2];
 	}
 
 	public void setProfundidade(float profundidade) {
-		pedido.getItensCompra().get(index).getProduto().getDimensoesCm()[2] = profundidade;
+		itemCompra.getProduto().getDimensoesCm()[2] = profundidade;
 	}
 
 	public Endereco getEnderecoEntrega() {
-		return pedido.getEndereco();
+		return itemCompra.getPedido().getEndereco();
 	}
 
 	public void setEnderecoEntrega(Endereco enderecoEntrega) {
-		pedido.setEndereco(enderecoEntrega);
+		itemCompra.getPedido().setEndereco(enderecoEntrega);
 	}
 
 	public String getConteudo() {
-		return pedido.getItensCompra().get(index).getProduto().getNome();
+		return itemCompra.getProduto().getNome();
 	}
 
 	public void setConteudo(String conteudo) {
-		pedido.getItensCompra().get(index).getProduto().setNome(conteudo);
+		itemCompra.getProduto().setNome(conteudo);
 	}
 	
 	

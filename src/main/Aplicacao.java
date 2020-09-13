@@ -98,7 +98,7 @@ public class Aplicacao {
 		
 		pedido.setItensCompra(itensCompra);
 		
-		Carga cargaAdaptada = new AdaptadorCarga(pedido, 0);
+		Carga cargaAdaptada = new AdaptadorCarga(itemCompra1);
 		
 		cargaAdaptada.setAltura(10f);
 		cargaAdaptada.setLargura(5f);
